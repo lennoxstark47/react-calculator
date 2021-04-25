@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 const App = () => {
+	const [answer, setAnswer] = useState('');
 	const [expression, setExpression] = useState(
 		''
 	);
@@ -8,8 +9,18 @@ const App = () => {
 		setExpression((prev) => prev + symbol);
 	};
 
+	const handleCalculation = () => {
+		setAnswer(eval(expression));
+		setExpression((prev) => prev + '=');
+	};
+
+	const handleAllClear = () => {
+		setExpression('');
+		setAnswer(0);
+	};
+
 	return (
-		<div>
+		<div className='main'>
 			<div className='container'>
 				<div className='wrapper'>
 					<div className='grid'>
@@ -19,19 +30,22 @@ const App = () => {
 								value={expression}
 								placeholder='0'
 								disabled></input>
+							<div className='total'>
+								<strong>{answer}</strong>
+							</div>
 						</div>
 						<div
-							onClick={handleClick}
+							onClick={handleAllClear}
 							className='pad-button AC'>
 							AC
 						</div>
 						<div
-							onClick={handleClick}
+							onClick={() => handleClick('/')}
 							className='pad-button division operator'>
 							/
 						</div>
 						<div
-							onClick={handleClick}
+							onClick={() => handleClick('*')}
 							className='pad-button multiplication operator'>
 							x
 						</div>
@@ -41,68 +55,69 @@ const App = () => {
 							7
 						</div>
 						<div
-							onClick={handleClick}
+							onClick={() => handleClick('8')}
 							className='pad-button eight'>
 							8
 						</div>
 						<div
-							onClick={handleClick}
+							onClick={() => handleClick('9')}
 							className='pad-button nine'>
 							9
 						</div>
 						<div
-							onClick={handleClick}
+							onClick={() => handleClick('-')}
 							className='pad-button minus operator'>
 							-
 						</div>
 						<div
-							onClick={handleClick}
+							onClick={() => handleClick('4')}
 							className='pad-button four'>
 							4
 						</div>
 						<div
-							onClick={handleClick}
+							onClick={() => handleClick('5')}
 							className='pad-button five'>
 							5
 						</div>
 						<div
-							onClick={handleClick}
+							onClick={() => handleClick('6')}
 							className='pad-button six'>
 							6
 						</div>
 						<div
-							onClick={handleClick}
+							onClick={() => handleClick('+')}
 							className='pad-button addition operator'>
 							+
 						</div>
 						<div
-							onClick={handleClick}
+							onClick={() => handleClick('1')}
 							className='pad-button one'>
 							1
 						</div>
 						<div
-							onClick={handleClick}
+							onClick={() => handleClick('2')}
 							className='pad-button two'>
 							2
 						</div>
 						<div
-							onClick={handleClick}
+							onClick={() => handleClick('3')}
 							className='pad-button three'>
 							3
 						</div>
 						<div
-							onClick={handleClick}
-							className='pad-button equal'>
+							onClick={handleCalculation}
+							className='pad-button equal'
+							id='equals'>
 							{' '}
 							={' '}
 						</div>
 						<div
-							onClick={handleClick}
+							onClick={() => handleClick('0')}
 							className='pad-button zero'>
 							0
 						</div>
 						<div
-							onClick={handleClick}
+							onClick={() => handleClick('.')}
 							className='pad-button dot'>
 							.
 						</div>

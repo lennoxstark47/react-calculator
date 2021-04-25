@@ -1,65 +1,79 @@
 .container {
-    padding-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	padding-top: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-
 
 .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-    'display display display display'
-    'AC AC division multiplication'
-    'seven eight nine minus'
-    'four five six addition'
-    'one two three equal'
-    'zero zero point equal';
-
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-areas:
+		'display display display display'
+		'AC AC division multiplication'
+		'seven eight nine minus'
+		'four five six addition'
+		'one two three equal'
+		'zero zero point equal';
 }
 
-.pad-button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: #4d4d4d;
-    color: white;
-    border: 1px solid black ;
-    outline: none ;
-    cursor: pointer;
-    font-family: 'Share Tech Mono', monospace;
+.pad-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 40px;
+	background-color: #4d4d4d;
+	color: white;
+	border: 1px solid black;
+	outline: none;
+	cursor: pointer;
+	font-family: 'Share Tech Mono', monospace;
 }
 
-.pad-button:hover{
-    color: black;
-    outline: 0.05em solid gray;
-    z-index: 3;
+.pad-button:hover {
+	color: black;
+	outline: 0.05em solid gray;
+	z-index: 3;
 }
 
 .AC {
-    grid-area: AC ;
-    background-color: rgb(172, 57, 57);
+	grid-area: AC;
+	background-color: rgb(172, 57, 57);
 }
 
-.equal{
-    grid-area: equal;
-    background-color: rgb(0, 68, 102);
+.equal {
+	grid-area: equal;
+	background-color: rgb(0, 68, 102);
 }
 
 .zero {
-    grid-area: zero;
-    
+	grid-area: zero;
 }
-.operator{
-    background-color: rgb(102, 102, 102);
+.operator {
+	background-color: rgb(102, 102, 102);
 }
 
-.display{
-    grid-area: display;
-    display: flex;
-    justify-items: right;
-    background-color: black;
+.display {
+	grid-area: display;
+	text-align: right;
+	background-color: black;
+}
+
+.total {
+	color: coral;
+	padding: 5px 5px;
+	font-family: 'IBM Plex Mono', monospace;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.display input {
+	background-color: black;
+	text-align: right;
+	color: white;
+	padding: 5px 5px;
+	width: 90%;
+	font-family: 'IBM Plex Mono', monospace;
+	font-size: 15px;
 }
