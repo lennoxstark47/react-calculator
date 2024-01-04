@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import * as math from 'mathjs';
+
 import './App.css';
 const App = () => {
 	const [answer, setAnswer] = useState('');
@@ -10,8 +12,9 @@ const App = () => {
 	};
 
 	const handleCalculation = () => {
-		setAnswer(eval(expression));
+		// setAnswer(eval(expression));
 		// setExpression((prev) => prev + '=');
+		setAnswer(math.evaluate(expression));
 	};
 
 	const handleAllClear = () => {
